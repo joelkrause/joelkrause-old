@@ -14,15 +14,26 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: "gatsby-source-wordpress",
+    //   options: {
+    //     baseUrl: "wordpress.joelkrause.co",
+    //     protocol: "http",
+    //     hostingWPCOM: false,
+    //     useACF: true,
+    //     verboseOutput: true
+    //   }
+    // },
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: `gatsby-source-graphql`,
       options: {
-        baseUrl: "wordpress.joelkrause.co",
-        protocol: "http",
-        hostingWPCOM: false,
-        useACF: true,
-        verboseOutput: true
-      }
+        // This type will contain remote schema Query type
+        typeName: `WPGraphQL`,
+        // This is field under which it's accessible
+        fieldName: `wpgraphql`,
+        // Url to query from
+        url: `http://wordpress.joelkrause.co/graphql`,
+      },
     },
   ]
 }

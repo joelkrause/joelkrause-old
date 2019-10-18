@@ -4,11 +4,12 @@ import SEO from "../global/_seo"
 
 class PostTemplate extends Component {
     render() {
-        const post = this.props.data.wordpressPage
+        // const post = this.props.data.wordpressPage
 
         return (
             <Layout>
-                <SEO title={post.title} description={post.excerpt} />
+                <>Hi</>
+                {/* <SEO title={post.title} description={post.excerpt} />
                 <div className="page__hero single__post">
                     <div className="wrapper">
                         <h1 className="page__title" dangerouslySetInnerHTML={{ __html: post.title }} />
@@ -18,7 +19,7 @@ class PostTemplate extends Component {
 
                 <div className="wrapper">
                     <div dangerouslySetInnerHTML={{ __html: post.content }} />
-                </div>
+                </div> */}
             </Layout>
         )
     }
@@ -27,17 +28,17 @@ class PostTemplate extends Component {
 
 export default PostTemplate
 
-export const pageQuery = graphql`
-    query currentPageQuery($id: String!) {
-        wordpressPage(id: { eq: $id }) {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            content
-        }
-        site {
-            siteMetadata {
-                title
-            }
-        }
-    }
-`
+// export const pageQuery = graphql`
+//     query currentPageQuery($id: String!) {
+//         wordpressPage(id: { eq: $id }) {
+//             title
+//             date(formatString: "MMMM DD, YYYY")
+//             content
+//         }
+//         site {
+//             siteMetadata {
+//                 title
+//             }
+//         }
+//     }
+// `
