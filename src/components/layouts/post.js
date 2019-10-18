@@ -11,7 +11,7 @@ class PostTemplate extends Component {
                 <SEO title={post.title} description={post.excerpt} />
                 <div className="page__hero single__post">
                     <div className="wrapper">
-                        <div className="post__card-icon" dangerouslySetInnerHTML={{__html:post.categories.slug}}/>
+                        <div className="post__card-icon"></div>
                         <h1 className="page__title" dangerouslySetInnerHTML={{ __html: post.title }} />
                         <p className="post__date" dangerouslySetInnerHTML={{ __html: post.date }}/>
                         <p className="post__date" dangerouslySetInnerHTML={{ __html: post.modified }}/>
@@ -36,9 +36,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             modified(formatString: "MMMM DD, YYYY")
             content
-            categories{
-                slug
-            }
         }
         site {
             siteMetadata {
