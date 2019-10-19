@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/global/layout"
 import SEO from "../components/global/_seo"
-
+// const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
 export default ({ data }) => {
   return (
     <Layout>
@@ -18,23 +18,31 @@ export default ({ data }) => {
       <div className="wrapper posts__cards">
         <header>
         <h2>Latest Posts</h2>
+        <pre>{JSON.stringify(data, null, 4)}</pre>
         <Link to="/posts" className="button">See All Posts</Link>
         </header>
       </div>
     </Layout>
   )
 }
-// export const pageQuery = graphql`
-//   query {
-//     allWordpressPost(sort: { fields: [date] }) {
-//       edges {
-//         node {
-//           title
-//           date(formatString: "MMMM DD, YYYY")
-//           excerpt
-//           slug
-//         }
-//       }
-//     }
-//   }
-// `
+
+export const query = graphql`
+  {
+    wpgraphql{
+    posts {
+      edges {
+        node {
+          id
+          title
+          date
+          modified
+          content
+          postACF {
+            icon
+          }
+        }
+      }
+    }
+}
+  }
+`
