@@ -17,7 +17,6 @@ export default ({ data }) => {
       <div className="wrapper posts__cards">
         <header>
         <h2>Latest Posts</h2>
-        <Link to="/posts" className="button">See All Posts</Link>
         </header>
       </div>
     </Layout>
