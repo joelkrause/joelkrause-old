@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 // import { createLocalLink } from "../../utils"
+import moment from "moment"
 
 
 const QUERY = graphql`
@@ -31,7 +32,7 @@ const RecentPostsWidget = () => (
                 <Link to={'posts/' + post.slug}>
                     <div className="post__card-icon"></div>
                     <div className="post__card-title">{post.title}</div>
-                    <div className="post__card-date">{post.date}</div>
+                    <div className="post__card-date">{moment(post.date).format("MMM Do YYYY")}</div>
                 </Link>
                 </div>
               )
