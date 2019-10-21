@@ -1,6 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/global/layout"
 import SEO from "../components/global/_seo"
@@ -14,6 +13,7 @@ export default ({ data }) => {
       <div className="wrapper">
       <h1>Hey, I'm Joel</h1>
       <p>I’m a passionate web developer from Melbourne, Australia – currently working at <a href="#" target="_blank">Raak</a>.</p>
+      <p>I like to push the boundaries and build things with WordPress & Gatsby (like this blog, for example).</p>
       </div>
       </div>
       <div className="wrapper posts__cards">
