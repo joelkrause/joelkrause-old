@@ -43,13 +43,6 @@ export const pageQuery = graphql`
         modified
         content
         uri
-        categories{
-            edges{
-              node{
-                name
-              }
-            }
-        }
         postACF {
             icon
             iconColor

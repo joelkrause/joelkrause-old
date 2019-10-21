@@ -14,6 +14,10 @@ const QUERY = graphql`
           link
           slug
           date
+          postACF {
+            icon
+            iconColor
+          }
         }
       }
     }
@@ -24,15 +28,15 @@ const RecentPostsWidget = () => (
   <StaticQuery
     query={QUERY}
     render={data => {
-      return (
+        return (
         <div>
             {data.wpgraphql.posts.nodes.map(post => {
               return (
                 <div className="post__card">
                 <Link to={'posts/' + post.slug}>
-                    <div className="post__card-icon"></div>
-                    <div className="post__card-title">{post.title}</div>
-                    <div className="post__card-date">{moment(post.date).format("MMM Do YYYY")}</div>
+                    <div className="post__card-icon" style={{backgroundColor: post.postACF.iconColor}} dangerouslySetInnerHTML={{__html: post.postACF.icon}}/>
+                    <div className="post__card-title" dangerouslySetInnerHTML={{__html: post.title}}/>
+                    <div className="post__card-date" dangerouslySetInnerHTML={{__html: moment(post.date).format("MMM Do YYYY")}}/>
                 </Link>
                 </div>
               )
