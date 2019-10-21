@@ -18,7 +18,7 @@ const Post = props => {
             <div className="wrapper">
             <h1 className="page__title" dangerouslySetInnerHTML={{ __html: title }} />
             <p className="post__date" dangerouslySetInnerHTML={{ __html: moment(date).format("MMM Do YYYY") }}/>
-            <p className="post__date" dangerouslySetInnerHTML={{ __html: moment(date).startOf('hour').fromNow() }}/>
+            <p className="post__date" dangerouslySetInnerHTML={{ __html: moment(date).startOf().fromNow() }}/>
             </div>
         </div>
         <div className="wrapper">
