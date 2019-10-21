@@ -3,6 +3,7 @@
     src: url('../../fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
         url('../../fonts/SpaceGrotesk-Regular.woff') format('woff');
     font-weight: 400;
+    font-display: fallback;
 }
 
 @font-face {
@@ -10,9 +11,8 @@
     src: url('../../fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
         url('../../fonts/SpaceGrotesk-Bold.woff') format('woff');
     font-weight: 700;
+    font-display: fallback;
 }
-
-@import url('https://rsms.me/inter/inter.css');
 
 * {
     box-sizing: border-box;
