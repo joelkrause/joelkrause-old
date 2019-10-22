@@ -2,7 +2,7 @@
     padding: 1rem;
     display: flex;
     justify-content: space-between;
-    font-weight: 400;
+    font-family: var(--accentFont);
     font-size: 1.1rem;
     z-index: 2;
     position: fixed;
@@ -11,8 +11,7 @@
     width: 100%;
 
     @include breakpoint(up, lg) {
-        font-size: 1.5rem;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .scrolling & {
