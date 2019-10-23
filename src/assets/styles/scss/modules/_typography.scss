@@ -15,14 +15,6 @@
 }
 
 @font-face {
-    font-family: 'Technique Sans';
-    src: url('../../fonts/Technique.woff2') format('woff2'),
-        url('../../fonts/Technique.woff') format('woff');
-    font-weight: normal;
-    font-display: fallback;
-}
-
-@font-face {
     font-family: 'League Spartan';
     src: url('../../fonts/leaguespartan-bold.woff2') format('woff2'),
         url('../../fonts/leaguespartan-bold.woff') format('woff');
@@ -30,7 +22,7 @@
     font-display: fallback;
 }
 
-@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -42,11 +34,6 @@ body {
     font-weight: 400;
     font-size: 1.1rem;
     line-height: 1.75rem;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
-    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 
     @include breakpoint(up, lg) {
         font-size: 1.215rem;
@@ -58,7 +45,7 @@ h1 {
     line-height: 1;
 
     @include breakpoint(up, lg) {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 }
 

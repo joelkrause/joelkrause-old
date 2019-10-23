@@ -12,7 +12,7 @@ const Post = props => {
     } = props
     const { title, content, date, modified, postACF, categories } = post
     const modifiedTime = moment(modified).startOf().fromNow()
-    const postedTime = moment(date).format("MMM Do YYYY")
+    const postedTime = moment(date).format("DD/MM/YYYY")
 
     return (
         <Layout>
@@ -21,8 +21,10 @@ const Post = props => {
             <div className="wrapper">
             <div className="post__card-icon" style={{backgroundColor: postACF.iconColor}} dangerouslySetInnerHTML={{ __html: postACF.icon }} />
             <h1 className="page__title" dangerouslySetInnerHTML={{ __html: title }} />
-            <p className="post__date" dangerouslySetInnerHTML={{ __html: `Posted on ` + postedTime }}/>
-            <p className="post__date" dangerouslySetInnerHTML={{ __html: `Updated about ` + modifiedTime }}/>
+            <div className="post__date_wrapper">
+                <p className="post__date" dangerouslySetInnerHTML={{ __html: `Published on ` + postedTime }}/>
+                <p className="post__date" dangerouslySetInnerHTML={{ __html: `Updated about ` + modifiedTime }}/>
+            </div>
             </div>
         </div>
         <div className="wrapper">

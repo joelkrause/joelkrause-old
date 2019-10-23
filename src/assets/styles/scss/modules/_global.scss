@@ -64,6 +64,22 @@ svg {
     }
   }
 
+  h1 {
+    margin: 2rem 0 1rem;
+    line-height: 1.15;
+  }
+
+  .post__date {
+    &:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+
+    &_wrapper {
+      display: flex;
+      font-size: 0.975rem;
+    }
+  }
+
   img {
     width: 105px;
     height: 105px;
