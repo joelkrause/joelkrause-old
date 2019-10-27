@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Layout from "../global/layout"
 import SEO from "../global/_seo"
+import Author from "../global/_author"
 import moment from "moment"
 
 const Post = props => {
@@ -13,6 +14,18 @@ const Post = props => {
     const { title, content, date, modified, postACF, categories } = post
     const modifiedTime = moment(modified).startOf().fromNow()
     const postedTime = moment(date).format("DD/MM/YYYY")
+    let posted = moment(postedTime).format("YYYY-MM-DD");
+
+    let six = moment().subtract(6,'month').format("YYYY-MM-DD");
+    let year = moment().subtract(12,'month').format("YYYY-MM-DD");
+    
+    if(moment(posted).isBefore(year)){
+      var dateClass = 'red'
+    } else if(moment(posted).isBefore(six)) {
+      var dateClass = 'orange'
+    } else {
+      var dateClass = 'green'
+    }
 
     return (
         <Layout>
@@ -23,12 +36,13 @@ const Post = props => {
             <h1 className="page__title" dangerouslySetInnerHTML={{ __html: title }} />
             <div className="post__date_wrapper">
                 <p className="post__date" dangerouslySetInnerHTML={{ __html: `Published on ` + postedTime }}/>
-                <p className="post__date" dangerouslySetInnerHTML={{ __html: `Updated about ` + modifiedTime }}/>
+                <p className={`post__date has--indicator `+dateClass} dangerouslySetInnerHTML={{ __html: `Updated about ` + modifiedTime }}/>
             </div>
             </div>
         </div>
         <div className="wrapper">
             <div dangerouslySetInnerHTML={{ __html: content }} />
+            <Author />
         </div>
         </Layout>
     )

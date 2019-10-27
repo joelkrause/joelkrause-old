@@ -78,6 +78,39 @@ svg {
       display: flex;
       font-size: 0.975rem;
     }
+
+    &.has--indicator {
+      &:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        background: #fff;
+        position: relative;
+        top: -2px;
+        margin-right: 10px;
+
+      }
+
+      &.green {
+        &:before {
+          background: #27ae60;
+        }
+      }
+
+      &.orange {
+        &:before {
+          background: #f39c12;
+        }
+      }
+
+      &.red {
+        &:before {
+          background: #e74c3c;
+        }
+      }
+    }
   }
 
   img {
