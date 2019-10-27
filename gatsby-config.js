@@ -14,16 +14,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: "gatsby-source-wordpress",
-    //   options: {
-    //     baseUrl: "wordpress.joelkrause.co",
-    //     protocol: "http",
-    //     hostingWPCOM: false,
-    //     useACF: true,
-    //     verboseOutput: true
-    //   }
-    // },
     {
       resolve: `gatsby-source-graphql`,
       options: {

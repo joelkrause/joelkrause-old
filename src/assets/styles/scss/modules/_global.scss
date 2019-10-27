@@ -80,35 +80,54 @@ svg {
     }
 
     &.has--indicator {
-      &:before {
-        content: '';
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        display: inline-block;
-        background: #fff;
-        position: relative;
-        top: -2px;
-        margin-right: 10px;
+      display: flex;
+      align-items: center;
+    }
 
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      margin-right: 10px;
+      position: relative;
+      cursor: help;
+
+      &:hover {
+        &:before {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      &:before {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: calc(100% + 10px);
+        background-color: #fff;
+        color: #000;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 0.875rem;
+        border-radius: 4px;
+        transform: translateY(25px);
+        opacity: 0;
+        transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+        user-select: none;
+        pointer-events: none;
+        width: 10vw;
       }
 
       &.green {
-        &:before {
-          background: #27ae60;
-        }
+        background: #27ae60;
       }
 
       &.orange {
-        &:before {
-          background: #f39c12;
-        }
+        background: #f39c12;
       }
 
       &.red {
-        &:before {
-          background: #e74c3c;
-        }
+        background: #e74c3c;
       }
     }
   }

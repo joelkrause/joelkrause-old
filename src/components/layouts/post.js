@@ -21,10 +21,13 @@ const Post = props => {
     
     if(moment(posted).isBefore(year)){
       var dateClass = 'red'
+      var text = 'Post is probably outdated.'
     } else if(moment(posted).isBefore(six)) {
       var dateClass = 'orange'
+      var text = 'Post should have some good resources but could be out of date.'
     } else {
       var dateClass = 'green'
+      var text = 'Post is brand spankin\' new and is up to date.'
     }
 
     return (
@@ -36,7 +39,10 @@ const Post = props => {
             <h1 className="page__title" dangerouslySetInnerHTML={{ __html: title }} />
             <div className="post__date_wrapper">
                 <p className="post__date" dangerouslySetInnerHTML={{ __html: `Published on ` + postedTime }}/>
-                <p className={`post__date has--indicator `+dateClass} dangerouslySetInnerHTML={{ __html: `Updated about ` + modifiedTime }}/>
+                <p className="post__date has--indicator">
+                    <div className={`indicator `+dateClass} data-tooltip={text}></div>
+                    <div className="text" dangerouslySetInnerHTML={{ __html: `Updated about ` + modifiedTime }}/>
+                </p>
             </div>
             </div>
         </div>

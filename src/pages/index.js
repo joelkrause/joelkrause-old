@@ -12,8 +12,7 @@ export default ({ data }) => {
       <div className="page__hero">
       <div className="wrapper">
       <h1>Hey, I'm Joel</h1>
-      <p>I’m a passionate web developer from Melbourne, Australia – currently working at <a href="#" target="_blank">Raak</a>.</p>
-      <p>I like to push the boundaries and build things with WordPress & Gatsby (like this blog, for example).</p>
+      <p>I’m a passionate web developer from Melbourne, Australia – currently working at <a href="https://raak.com.au" target="_blank">Raak</a>.</p>
       </div>
       </div>
       <div className="wrapper posts__cards">
