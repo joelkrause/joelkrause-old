@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
@@ -25,5 +26,25 @@ module.exports = {
         url: `http://wordpress.joelkrause.co/graphql`,
       },
     },
+    {
+      resolve: 'gatsby-wpgraphql-inline-images',
+      options: {
+        wordPressUrl: `http://wordpress.joelkrause.co/`,
+        uploadsUrl: `http://wordpress.joelkrause.co/wp-content/uploads/`,
+        processPostTypes: [
+          "Page", "Post"
+        ],
+        graphqlTypeName: 'wpgraphql'
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ]
 }

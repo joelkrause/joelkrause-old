@@ -1,8 +1,10 @@
 import React, { Component } from "react"
+import contentParser from "gatsby-wpgraphql-inline-images"
 import Layout from "../global/layout"
 import SEO from "../global/_seo"
 import Author from "../global/_author"
 import moment from "moment"
+import Img from "gatsby-image"
 
 const Post = props => {
     const {
@@ -30,6 +32,11 @@ const Post = props => {
       var text = 'Post is brand spankin\' new and is up to date.'
     }
 
+    const pluginOptions = {
+      wordPressUrl: `https://wordpress.joelkrause.co/`,
+      uploadsUrl: `https://wordpress.joelkrause.co/wp-content/uploads/`,
+    };
+
     return (
         <Layout>
         <SEO title={title} />
@@ -47,7 +54,7 @@ const Post = props => {
             </div>
         </div>
         <div className="wrapper">
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            <div>{contentParser({ content }, pluginOptions)}</div>
             <Author />
         </div>
         </Layout>
